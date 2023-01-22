@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .promo {
+            position: relative;
+            z-index: 1;
+            height: 600px;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        .promo__block {
+            display: flex;
+            gap: 35px;
+        }
+        .promo__title {
+            margin-top: 25px;
+        }
+        .promo__subtitle {
+            font-weight: 600;
+            font-size: 31.0426px;
+            line-height: 140%;
+            text-align: center;
+            color: #000000;
+            padding-top: 23px;
+        }
+        .promo__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .promo__list {
+            display: flex;
+            gap: 21px;
+            list-style: none;
+            margin-left: -40px;
+        }
+        .promo__item-title {
+            font-weight: 600;
+            font-size: 19.9451px;
+            line-height: 140%;
+            text-align: center;
+            color: #000000;
+        }
+        .promo__item-subtitle {
+            font-weight: 400;
+            font-size: 14.294px;
+            line-height: 140%;
+            text-align: center;
+            color: #000000;
+        }
+        .promo__divider {
+            width: 1px;
+            height: 100%;
+            border: 1px solid #000;
+            background: #000000;
+        }
+        .promo__gift {
+            margin-top: 30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 134.84px;
+            height: 134.84px;
+            border: 1.64444px solid #000000;
+            border-radius: 12.3333px;
+        }
+        .promo__gift::after {
+            content: '';
+            background: url(./img/gift-icon.png) #fff;
+            position: absolute;
+            width: 29px;
+            height: 29px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .promo__gift-title {
+            position: absolute;
+            bottom: -10px;
+            font-weight: 700;
+            font-size: 14.2271px;
+            line-height: 17px;
+            text-align: center;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #000000;
+            background: #fff;
+        }
+        .promo__descr {
+            list-style: none;
+            margin-left: -40px;
+            margin-top: 65px;
+        }
+        .promo__descr li {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+            color: #C4C4C4;
+        }
+        .products {
+            position: relative;
+            z-index: 1;
+            background-color: #FAFAFA;
+            padding: 85px 0;
+        }
+        .products__list {
+            list-style-type: none;
+            margin-left: -40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .products__items {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+        .products__link {
+            display: inline-block;
+            text-decoration: none;
+        }
+        .products__link div {
+            font-weight: 500;
+            font-size: 17.15px;
+            line-height: 31px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            letter-spacing: 0.08em;
+            color: #FFFFFF;
+            width: 160px;
+            height: 40px;
+            background-color: #3D70F6;
+            border-radius: 122.5px;
+        }
+        .cart {
+            padding: 109px 0;
+        }
+        .cart__block {
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 40px;
+            row-gap: 25px;
+        }
+        .cart__wrapper {
+            max-width: 560px;
+            height: 320px;
+            background: #FAFAFA;
+            border-radius: 16px;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        .cart__img {
+            display: block;
+            margin: auto;
+        }
+        .cart__img-1 {
+            margin: 0 69px;
+            display: block;
+        }
+        .cart__wrapper-column {
+            flex-direction: row;
+        }
+        .cart__descr {
+            margin: 30px 60px;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 150%;
+            text-align: center;
+            color: #000000;
+        }
+        .cart__descr-1 {
+            margin: auto;
+        } 
+        .cart__descr_white {
+            margin-top: 20px;
+            color: #FFFFFF;
+        }
+        .cart__bg {
+            background-image: url('./img/cart4.png');
+        }
+        .flagman {
+            padding-bottom: 120px;
+        }
+        .flagman__wrapper {
+            position: relative;
+        }
+        .flagman__main-title {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 150%;
+            text-align: center;
+            color: #000000;
+        }
+        .flagman__img {
+            display: block;
+            margin: 100px auto;
+        }
+        .flagman__main-img {
+            display: block;
+            margin: 50px auto;
+        }
+        .flagman__text {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 160px;
+            left: 170px;
+            gap: 12px;
+        }
+        .flagman__text-1 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            text-align: right;
+            color: #000000;
+        }
+        .flagman__text-2 {
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 150%;
+            color: #000000;
+        }
+        .flagman__text-3 {
+            position: absolute;
+            bottom: 50px;
+            right: 170px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #000000;
+            width: 360px;
+        }
+        .flagman__descr {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flagman__title {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 150%;
+            text-align: center;
+            background: linear-gradient(180deg, #7BCDD0 22.78%, #466061 75.56%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flagman__subtitle {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            text-align: center;
+            color: #000000;
+        }
+        .flagman__absolute {
+            position: absolute;
+            bottom: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .glass {
+            padding: 173px 0;
+            background-color: #000000;
+            overflow: hidden;
+        }
+        .glass__title {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 150%;
+            color: #FFFFFF;
+            width: 461px;
+        }
+        .glass__subtitle {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #FFFFFF;
+            width: 461px;
+            margin-top: 20px;
+        }
+        .glass__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 81px;
+        }
+        .game {
+            padding: 135px 0;
+        }
+        .game__title {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 150%;
+            color: #000000;
+        }
+        .game__descr {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #000000;
+        }
+        .game__text {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 360px 360px;
+            gap: 40px;
+        }
+        .game__img {
+            display: block;
+            margin: 50px auto;
+        }
+        .game__wrapper {
+            display: grid;
+            grid-template-columns: 236px 236px 236px;
+            justify-content: center;
+            gap: 40px;
+            justify-items: center;
+        }
+        .game__wrapper-title {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 150%;
+            text-align: center;
+            background: linear-gradient(180deg, #7BCDD0 22.78%, #466061 75.56%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .game__wrapper-subtitle {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            text-align: center;
+            color: #000000;
+        }
+        .technology {
+            background-image: url('./img/technology.png');
+            padding: 176px 0 250px;
+        }
+        .technology__wrapper {
+            margin-top: 32px;
+        }
+        .technology__wrapper-title {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 150%;
+            background: linear-gradient(180deg, #7BCDD0 22.78%, #466061 75.56%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .technology__wrapper-subtitle {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #FFFFFF;
+        }
+        .technology__img {
+            margin-top: 45px;
+        }
+        .technology__right {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .charge {
+            position: relative;
+            padding: 200px 0;
+        }
+        .charge__img {
+            display: block;
+            margin: 0 auto
+        }
+        .charge__text {
+            margin-top: 45px;
+            display: flex;
+            gap: 40px;
+        }
+        .charge__title {
+            width: 100%;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 45px;
+            color: #000000;
+        }
+        .charge__descr {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #000000;
+        }
+        .charge__wrapper {
+            margin-top: 31px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+        }
+        .charge__wrapper-text {
+            display: grid;
+            grid-template-columns: 260px 260px;
+            gap: 40px;
+        }
+        .charge__right {
+            display: grid;
+            grid-template-columns: 560px;
+            justify-content: flex-end;
+        }
+        .charge__image {
+            position: absolute;
+            left: 0;
+            width: 90%;
+            bottom: 315px;
+        }
+        .turbo {
+            background-image: url('./img/turbo.png');
+            padding: 144px 0;
+        }
+        .turbo__image {
+            display: none;
+        }
+        .scanner {
+            position: relative;
+            padding: 150px 0 400px;
+            background-color: #000000;
+        }
+        .scanner__img {
+            position: absolute;
+            top: 50px;
+            left: 47%;
+            transform: translateX(-50%);
+        }
+        .scanner__wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 46px;
+        }
+        .scanner__image {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .camera {
+            position: relative;
+            z-index: 1;
+            height: 800px;
+        }
+        .camera__wrapper {
+            height: 861px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .camera__img {
+            position: absolute;
+            top: 105px;
+            left: 60%;
+            transform: translateX(-60%);
+        }
+        .camera__text {
+            width: 360px;
+        }
+        .camera__descr {
+            position: absolute;
+            right: 215px;
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+            justify-content: start;
+            top: 20%;
+        }
+        .service {
+            position: relative;
+            z-index: 1;
+            background-color: #000000;
+            padding: 100px 0;
+        }
+        .service__wrapper {
+            margin-top: 137px;
+            display: grid;
+            grid-template-columns: 561px 561px;
+            column-gap: 40px;
+            row-gap: 60px;
+        }
+        .service__img {
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 30px
+        }
+        .design {
+            background-image: url('./img//design-bg.png');
+        }
+        .design__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 70px;
+        }
+        .green {
+            position: relative;
+            background: url('./img/green.png') center center/cover no-repeat;
+            height: 100vh;
+        }
+        .green__wrapper {
+            position: absolute;
+            bottom: 117px;
+        }
+        .ice {
+            background: url('./img/ice-bg.png') center center/cover no-repeat;
+            height: 100vh;
+        }
+        .ice__wrapper {
+            position: absolute;
+            top: 192px;
+            right: 0;
+        }
+        .black {
+            position: relative;
+            background: url('./img/black-bg.png') center center/cover no-repeat;
+            height: 100vh;
+        }
+        .black__wrapper {
+            position: absolute;
+            top: 350px;
+        }
+        .also {
+            position: relative;
+            z-index: 1;
+            padding-top: 45px;
+            height: 550px;
+        }
+        .screen {
+            position: relative;
+            z-index: 1;
+            background-color: #ffffff;
+            padding: 100px 0;
+        }
+        .screen__list {
+            list-style-type: none;
+            margin-left: -40px;
+        }
+        .screen_list li {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #000000;
+        }
+        .tal {
+            text-align: left;
+        }
+        .tac {
+            text-align: center;
+        }
+        .mt-210 {
+            margin-top: 210px;
+        }
+        .mt-150 {
+            margin-top: 150px;
+        }
+        .mt-43 {
+            margin-top: 43px;
+        }
+        .mt-500 {
+            margin-top: 500px;
+        }
+        .color_white {
+            color: white;
+        }
+        .products__link .white {
+            color: #000000;
+            background-color: #fff;
+        }
+        .tech__img {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            .promo {
+                height: 930px;
+            }
+            .promo__block {
+                flex-direction: column-reverse;
+            }
+            .promo__title {
+                margin-top: 0;
+                width: 80%;
+            }
+            .promo__subtitle {
+                padding-top: 0;
+            }
+            .promo__list {
+                gap: 12px;
+            }
+            .promo__gift {
+                margin-top: 15px;
+            }
+            .promo__descr {
+                margin-top: 35px;
+            }
+            .promo__block {
+                gap: 0;
+            }
+            .promo__main-logo {
+                width: 85%;
+                display: block;
+                margin: 0 auto;
+            }
+            .products {
+                padding: 25px 0;
+            }
+            .products__items {
+                gap: 9px;
+            }
+            .products__items img {
+                width: 120px;
+            }
+            .products__link div {
+                width: 100px;
+                height: 30px;
+            }
+            .cart {
+                padding: 25px 0;
+            }
+            .cart__wrapper {
+                width: 100%;
+                height: 240px;
+            }
+            .cart__block {
+                grid-template-columns: 100%;
+            }
+            img {
+                max-width: 100%;
+            }
+            .cart__img-1 {
+                margin: 0;
+            }
+            .cart__descr {
+                margin: 0;
+            }
+            .cart__descr-1 {
+                margin: auto;
+            }
+            .flagman__text {
+                top: 0px;
+                left: 0;
+            }
+            .flagman__main-img {
+                margin: 10px auto 140px;
+            }
+            .flagman__text-3 {
+                bottom: -100px;
+                right: 0;
+            }
+            .flagman__descr {
+                bottom: -110px;
+                left: 0;
+                transform: translateX(0);
+            }
+            .flagman__img {
+                margin: 165px 0;
+            }
+            .flagman__absolute {
+                bottom: -40%;
+                left: 0;
+                transform: translateX(0);
+            }
+            .glass {
+                padding: 50px 0 160px;
+            }
+            .glass__wrapper {
+                flex-direction: column;
+                gap: 230px;
+            }
+            .glass__title {
+                width: 100%;
+                text-align: center;
+            }
+            .glass__subtitle {
+                width: 100%;
+                text-align: center; 
+            }
+            .glass__wrapper img {
+                transform: rotate(90deg);
+            }
+            .game {
+                padding: 40px 0;
+            }
+            .game__text {
+                flex-direction: column;
+                display: flex;
+                gap: 10px;
+            }
+            .game__title {
+                text-align: center;
+            }
+            .game__descr {
+                text-align: center;
+            }
+            .game__wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .technology {
+                background: none;
+                padding: 0;
+            }
+            .technology__flex {
+                display: flex;
+                align-items: center;
+            }
+            .technology__wrapper {
+                width: 100%;
+                text-align: center;
+            }
+            .tech__img {
+                display: block;
+            }
+            .color_black {
+                color: #000;
+            }
+            .charge {
+                padding: 50px 0;
+            }
+            .charge__text {
+                flex-direction: column;
+                text-align: center;
+            }
+            .charge__wrapper-text {
+                grid-template-columns: 100%;
+            }
+            .charge__block {
+                grid-template-columns: auto auto;
+                margin-top: 120px;
+                justify-content: space-around;
+            }
+            .mt-150 {
+                margin-top: 50px;
+            }
+            .charge__column {
+                grid-template-columns: 100%;
+                text-align: center;
+            }
+            .mt-210 {
+                margin-top: 20px;
+            }
+            .charge__image {
+                bottom: 120px;
+            }
+            .turbo {
+                padding: 50px 0;
+                background: #000000;
+            }
+            .turbo__image {
+                display: block;
+                height: 100%;
+            }
+            .turbo__wrapper {
+                justify-items: center;
+            }
+            .charge__right {
+                grid-template-columns: 100%;
+                text-align: center;
+            }
+            .scanner {
+                padding: 30px 0 100px;
+            }
+            .scanner__img {
+                top: 150px;
+                left: 50%;
+            }
+            .camera__text {
+                position: absolute;
+                top: 40px;
+                width: 96%;
+                text-align: center;
+            }
+            .camera__img {
+                width: 230px;
+                top: 270px;
+                left: 100px;
+                transform: translateX(0);
+            }
+            .camera__descr {
+                gap: 0;
+                right: 140px;
+                top: 275px;
+            }
+            .service {
+                padding: 50px 0;
+            }
+            .service__wrapper {
+                grid-template-columns: 100%;
+                margin-top: 50px;
+            }
+            .design {
+                padding-top: 50px;
+            }
+            .design__wrapper {
+                flex-direction: column-reverse;
+            }
+            .screen {
+                padding: 50px 0;
+            }
+            .also {
+                height: 1045px;
+            }
+            .also__title {
+                margin-bottom: 40px;
+            }
+            .black__wrapper {
+                top: 100px;
+            }
+            .ice__wrapper {
+                top: 100px;
+                right: 10px;
+            }
+            .mt-500 {
+                margin-top: 600px;
+            }
+            .also__img {
+                display: block;
+                margin: 0 auto;
+                width: 85%;
+            }
+        }
+        @media (max-width: 420px) {
+            .promo {
+                height: 100%;
+            }
+            .flagman__absolute {
+                bottom: -80%;
+            }
+            .glass__wrapper {
+                gap: 120px;
+            }
+            .charge__image {
+                bottom: 145px;
+            }
+            .scanner__img {
+                top: 335px;
+            }
+            .camera__descr {
+                right: 4px;
+                top: 325px;
+            }
+            .camera__img {
+                top: 310px;
+                left: 20px;
+            }
+            .also {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="promo">
+        <div class="container promo__block">
+            <img class="promo__main-logo" src="img/promo-main.png" alt="main logo">
+            <div class="promo__wrapper">
+                <img class="promo__title" src="img/honor-title.png" alt="Title honor">
+                <div class="promo__subtitle">Круто. Даже слишком<sup>1</sup></div>
+                <ul class="promo__list">
+                    <li class="promo__item">
+                        <div class="promo__item-title">до 120 Гц2</div>
+                        <div class="promo__item-subtitle">Частота обновления</div>
+                    </li>
+                    <li><div class="promo__divider"></div></li>
+                    <li class="promo__item">
+                        <div class="promo__item-title">1,07</div>
+                        <div class="promo__item-subtitle">млрд. цветов</div>
+                    </li>
+                    <li><div class="promo__divider"></div></li>
+                    <li class="promo__item">
+                        <div class="promo__item-title">5100 мА*ч3</div>
+                        <div class="promo__item-subtitle">мощная батарея</div>
+                    </li>
+                </ul>
+                <div class="promo__gift">
+                    <img class="promo__gift-img" src="img/honor-gift.png" alt="gift">
+                    <span class="promo__gift-title">в подарок</span>
+                </div>
+                <ul class="promo__descr">
+                    <li>1. Среди аналогичных по стоимости смартфонов HONOR.</li>
+                    <li>2. Частота обновления экрана может варьироваться в зависимости от приложения и достигать 120 Гц.</li>
+                    <li>
+                        3. По данным лаборатории HONOR. Фактические данные могут варьироваться в зависимости от привычек использования и факторов окружающей среды. Изображения продукта предоставлены только для справки. Фактические характеристики продукта ( в т.ч. внешний вид и цвет) могут отличаться. Стандарт сети 5G может поддерживаться местными операторами и быть доступным не во всех регионах.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <div class="container">
+            <ul class="products__list">
+                <li class="products__items">
+                    <img src="img/honor1.png" alt="honor">
+                    <a class="products__link" href="#"><div>Купить</div></a>
+                </li>
+                <li class="products__items">
+                    <img src="img/honor2.png" alt="honor">
+                    <a class="products__link" href="#"><div>Купить</div></a>
+                </li>
+                <li class="products__items">
+                    <img src="img/honor3.png" alt="honor">
+                    <a class="products__link" href="#"><div>Купить</div></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="cart">
+        <div class="container">
+            <div class="cart__block">
+                <div class="cart__wrapper">
+                    <div class="cart__descr">Флагманский OLED-экран <br> с частотой обновления до 120 Гц</div>
+                    <img class="cart__img" src="img/cart1.png" alt="">
+                </div>
+                <div class="cart__wrapper">
+                    <div class="cart__descr">Емкая батарея 5100 мА*ч</div>
+                    <img class="cart__img" src="img/cart2.png" alt="">
+                </div>
+                <div class="cart__wrapper cart__wrapper-column">
+                    <img class="cart__img-1" src="img/cart3.png" alt="">
+                    <div class="cart__descr cart__descr-1">Технология быстрой зарядки HONOR SuperCharge 40 Вт</div>
+                </div>
+                <div class="cart__wrapper cart__bg">
+                    <div class="cart__descr cart__descr_white">Технология расширения <br> оперативной памяти 6 Гб + 5 Гб</div>
+                </div>
+                <div class="cart__wrapper">
+                    <div class="cart__descr">Тонкий корпус 7,9 мм</div>
+                    <img class="cart__img" src="img/cart5.png" alt="">
+                </div>
+                <div class="cart__wrapper cart__wrapper-column">
+                    <img class="cart__img-1" src="img/cart6.png" alt="">
+                    <div class="cart__descr cart__descr-1">Тройная камера 64 Мп</div>
+            </div>
+        </div>
+    </section>
+    <section class="flagman">
+        <div class="container">
+            <div class="flagman__main-title">Флагманский уровень экрана</div>
+            <div class="flagman__wrapper">
+                <div class="flagman__text">
+                    <div class="flagman__text-1">Изогнутый <br> экран</div>
+                    <div class="flagman__text-2">45°</div>
+                </div>
+                <img class="flagman__main-img" src="img/flagman.png" alt="">
+                <div class="flagman__text-3">Экран-водопад с симметрично изогнутыми под углом 45° краями обеспечивает эффект полного погружения в картинку и гарантирует максимально комфортное взаимодействие.</div>
+            </div>
+            <div class="flagman__wrapper">
+                <img class="flagman__img" src="img/flatman1.png" alt="">
+                <div class="flagman__descr">
+                    <div class="flagman__title">1,07 млрд</div>
+                    <div class="flagman__subtitle">Отображаемых цветов</div>
+                    <div class="flagman__subtitle" style="margin-top:20px;">Поддержка 1,07 млрд цветов1 обеспечивает реалистичность изображения, отображая на экране весь диапазон оттенков.</div>
+                </div>
+            </div>
+            <div class="flagman__wrapper">
+                <img class="flagman__img" src="img/flatman2.png" alt="">
+                <div class="flagman__absolute">
+                    <div class="flagman__title">800 нит</div>
+                    <div class="flagman__subtitle">Максимальная яркость</div>
+                    <div class="flagman__subtitle">Яркость 800 нит гарантирует комфортное взаимодействие со смартфоном даже при ярком солнечном свете.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="glass">
+        <div class="container">
+            <div class="glass__wrapper">
+                <div class="glass__text">
+                    <div class="glass__title">Усиленное стекло</div>
+                    <div class="glass__subtitle">Экран изготовлен из стекла повышенной прочности более 900 МПа2 толщиной 0,65 мм, обеспечивая комфорт и безопасность при повседневном использовании.</div>
+                </div>
+                <img src="img/glass.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="game">
+        <div class="container">
+            <div class="game__text">
+                <div class="game__title">Игровой процесс <br> без компромиссов</div>
+                <div class="game__descr">Частота дискретизации сенсорного слоя 300 Гц3 и точное определение точки касания вплоть до субпикселя сделает игровой процесс захватывающим. Более плавный игровой процесс будет достигаться в том числе за счет субпиксельного рендеринга.</div>
+            </div>
+            <img class="game__img" src="img/game.png" alt="">
+            <div class="game__wrapper">
+                <div>
+                    <div class="game__wrapper-title">120 Гц</div>
+                    <div class="game__wrapper-subtitle">Частота обновления <br> экрана<sup>4</sup></div>
+                </div>
+                <div>
+                    <div class="game__wrapper-title">300 Гц</div>
+                    <div class="game__wrapper-subtitle">Частота дискретизации</div>
+                </div>
+                <div>
+                    <div class="game__wrapper-title">&lt 1 Пикселя</div>
+                    <div class="game__wrapper-subtitle">Точность касания</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="technology">
+        <img class="tech__img" src="img/technology.png" alt="">
+        <div class="container">
+            <div class="technology__right">
+                <div class="technology__block">
+                    <div class="glass__text">
+                        <div class="glass__title color_black">Технология снижения мерцания — защита вашего зрения<sup>5</sup></div>
+                        <div class="glass__subtitle color_black">Усовершенствованная технология снижения мерцания с ШИМ-частотой до 1920 Гц обеспечивает комфортное взаимодействие пользователя с экраном при низком освещении. Технология снижения уровня синего света на аппаратном уровне гарантируют безопасность для ваших глаз.</div>
+                    </div>
+                    <div class="technology__flex">
+                        <div class="technology__wrapper">
+                            <div class="technology__wrapper-title">1920 Гц</div>
+                            <div class="technology__wrapper-subtitle color_black">ШИМ-частота</div>
+                        </div>
+                        <div>
+                            <img class="technology__img" src="img/technology-icon.png" alt="">
+                            <div class="glass__subtitle color_black">Сертификат по снижению уровня синего света</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="charge">
+        <div class="container">
+            <img class="charge__img" src="img/charge-5000.png" alt="">
+            <div class="charge__text">
+                <div class="charge__title">Заряжай один раз, пользуйся два дня<sup>6</sup></div>
+                <div class="charge__descr">Батарея емкостью 5100 мА*ч7 держит заряд в течение двух дней благодаря технологии интеллектуального энергосбережения HONOR. Быстрая зарядка HONOR SuperCharge мощностью 40 Вт позволяет всего после 30 минут подключения к электросети непрерывно смотреть видео на протяжении 12,5 часов8.</div>
+            </div>
+            <div class="charge__wrapper">
+                <img src="img/charge.png" alt="">
+                <div class="charge__wrapper-text">
+                    <div>
+                        <div class="game__wrapper-title tal">40 Вт</div>
+                        <div class="game__wrapper-subtitle tal">Технология быстрой зарядки HONOR SuperCharge </div>
+                    </div>
+                    <div>
+                        <div class="game__wrapper-title tal">5100 мА*ч</div>
+                        <div class="game__wrapper-subtitle tal">Емкий аккумулятор</div>
+                    </div>
+                </div>
+            </div>
+            <img class="charge__image" src="img/charge-icon.png" alt="">
+            <div class="charge__right mt-150 charge__column">
+                <div class="charge__title">Легкий, но мощный — исключительный опыт взаимодействия с устройством</div>
+                <div class="charge__descr mt-210">Производительность или внешний вид? Больше не придется выбирать, ведь HONOR X9a обладает превосходной выносливостью, легкостью и элегантностью, благодаря увеличенной автономности и стильному дизайну.</div>
+                <div class="charge__wrapper-text charge__block">
+                    <div>
+                        <div class="game__wrapper-title tal">7,9 мм<sup>9</sup></div>
+                        <div class="game__wrapper-subtitle tal">Толщина</div>
+                    </div>
+                    <div>
+                        <div class="game__wrapper-title tal">175 г<sup>10</sup></div>
+                        <div class="game__wrapper-subtitle tal">Вес</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="turbo">
+        <div class="container">
+            <div class="technology__block">
+                <div class="glass__text">
+                    <div class="glass__title">Технология <br> RAM Turbo X — плавность и производительность на высоком уровне</div>
+                    <div class="glass__subtitle">Технология RAM Turbo X увеличивает объем оперативной памяти на целых 5 Гб<sup>11</sup>, обеспечивая плавность работы устройства. Технология Anti-aging Engine гарантирует смартфону бесперебойную работу, оптимизацию потребления энергии и сохранение производительности в течение 36 месяцев<sup>12</sup>.</div>
+                </div>
+                <div class="charge__wrapper-text mt-43 turbo__wrapper">
+                    <div>
+                        <div class="game__wrapper-title tal">6-нм</div>
+                        <div class="game__wrapper-subtitle tal color_white">Процессор Qualcomm <br> Snapdragon 5G</div>
+                    </div>
+                    <div>
+                        <div class="game__wrapper-title tal">11 Гб (6 Гб + 5 Гб)</div>
+                        <div class="game__wrapper-subtitle tal color_white">Технология расширения оперативной памяти до 11 Гб</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="turbo__image" src="img/turbo-mobile.png" alt="">
+    </section>
+    <section class="scanner">
+        <div class="container">
+            <div class="charge__right">
+                <div class="charge__title color_white">Сканер отпечатков пальцев под экраном — начни работу легким касанием</div>
+                <div class="charge__descr color_white">Расположенный под экраном сканер отпечатков пальцев обеспечивает мгновенную разблокировку смартфона. </div>
+            </div>
+            <img class="scanner__img" src="img/scaner.png" alt="">
+            <div class="mt-500">
+                <div class="charge__title color_white tac">Увеличьте громкость, защитите слух</div>
+                <div class="charge__descr color_white tac">Режим повышенной громкости улучшает качество звука при вызовах13. Технология шумоподавления HONOR с двумя микрофонами позволяет устранить шум окружающей среды, усиливая голос собеседника и улучшая качество разговора. Смартфон, дважды сертифицированный по стандарту Hi-Res Gold, подарит незабываемые ощущения от прослушивания музыки с проводными или беспроводными наушниками. </div>
+            </div>
+            <div class="scanner__wrapper">
+                <img src="img/scaner-logo1.png" alt="">
+                <img src="img/scaner-logo2.png" alt="">
+            </div>
+        </div>
+        <img class="scanner__image" src="img/scaner-bg.png" alt="">
+    </section>
+    <section class="camera">
+        <div class="container">
+            <div class="camera__wrapper">
+                <div class="camera__text">
+                    <div class="charge__title">Сверхчеткая камера для съемки важных моментов</div>
+                    <div class="charge__descr">Тройная камера 64 Мп14 делает яркие и четкие снимки с близкого расстояния и передает точные детали при съемке крупным планом.</div>
+                </div>
+                <img class="camera__img" src="img/camera.png" alt="">
+                <div class="camera__descr">
+                    <div>
+                        <div class="game__wrapper-title tal">2 Мп</div>
+                        <div class="game__wrapper-subtitle tal">Макрокамера</div>
+                    </div>
+                    <div>
+                        <div class="game__wrapper-title tal">64 Мп</div>
+                        <div class="game__wrapper-subtitle tal">Ультрачеткая камера</div>
+                    </div>
+                    <div>
+                        <div class="game__wrapper-title tal">5 Мп</div>
+                        <div class="game__wrapper-subtitle tal">Широкоугольная камера</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="service">
+        <div class="container">
+            <div class="flagman__main-title color_white">Откройте для себя новые сервисные преимущества</div>
+            <div class="service__wrapper">
+                <div>
+                    <img class="service__img" src="img/service-1.png" alt="">
+                    <div class="game__title  color_white">Быстрый ремонт или подарок</div>
+                    <div class="game__descr color_white">Предоставим подарок-комплимент, если ремонт устройства продлится больше обещанного. </div>
+                </div>
+                <div>
+                    <img class="service__img" src="img/service-2.png" alt="">
+                    <div class="game__title  color_white">Ремонт с бесплатной доставкой</div>
+                    <div class="game__descr color_white">Курьерская отправка смартфонов в сервисный центр и обратно предоставляется бесплатно для гарантийных и негарантийных ремонтов на всей территории Республики Казахстан.</div>
+                </div>
+                <div>
+                    <img class="service__img" src="img/service-3.png" alt="">
+                    <div class="game__title  color_white">Сервисная неделя</div>
+                    <div class="game__descr color_white">Отремонтируйте свое устройство, заплатив только за запчасть и получите бесплатное обновление программного обеспечения</div>
+                </div>
+                <div>
+                    <img class="service__img" src="img/service-4.png" alt="">
+                    <div class="game__title  color_white">Бесплатная защитная пленка:</div>
+                    <div class="game__descr color_white">Это сервисная привилегия для устройств HONOR X9a, купленных с 02.02.2023 по 31.03.2023 в Казахстане. Клиенты могут получить одну (1) бесплатную установку защитной пленки для задней крышки телефона без оплаты</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="design">
+        <div class="container">
+            <div class="design__wrapper">
+                <img src="img/design-camera.png" alt="">
+                <div class="technology__right">
+                    <div class="technology__block">
+                        <div class="glass__text">
+                            <div class="glass__title">Дизайн камеры — от простоты к возможностям</div>
+                            <div class="glass__subtitle">Симметричный дизайн камеры в виде кольца добавляет задней поверхности смартфона упорядоченность и утонченность.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="green">
+        <div class="container">
+            <div class="green__wrapper">
+                <a class="products__link" href="#"><div class="white">Купить</div></a>
+                <div class="game__title color_white">Изумрудно-зеленый</div>
+            </div>
+        </div>
+    </section>
+    <section class="ice">
+        <div class="container" style="position: relative;">
+            <div class="ice__wrapper">
+                <a class="products__link" href="#"><div class="white">Купить</div></a>
+                <div class="game__title">Мерцающий лед</div>
+            </div>
+        </div>
+    </section>
+    <section class="black">
+        <div class="container">
+            <div class="black__wrapper">
+                <a class="products__link" href="#"><div class="white">Купить</div></a>
+                <div class="game__title color_white">Полночный черный</div>
+            </div>
+        </div>
+    </section>
+    <section class="also">
+        <div class="container">
+            <div class="game__title tac also__title">Также вас может заинтересовать HONOR X7a</div>
+            <div class="promo__block">
+                <img class="also__img" src="img/honor-x7a.png" alt="main logo">
+                <div class="promo__wrapper">
+                    <img class="promo__title" src="img/honorx7a-title.png" alt="Title honor">
+                    <div class="promo__subtitle">Круто. Даже слишком<sup>1</sup></div>
+                    <ul class="promo__list">
+                        <li class="promo__item">
+                            <div class="promo__item-title">5330 мА*ч<sup>3</sup></div>
+                            <div class="promo__item-subtitle">Eмкая батарея</div>
+                        </li>
+                        <li><div class="promo__divider"></div></li>
+                        <li class="promo__item">
+                            <div class="promo__item-title">50 Мп<sup>3</sup></div>
+                            <div class="promo__item-subtitle">Квадрокамера</div>
+                        </li>
+                    </ul>
+                    <a class="products__link" href="#"><div>Купить</div></a>
+                    <ul class="promo__descr">
+                        <li>1. Среди аналогичных по стоимости смартфонов HONOR.</li>
+                        <li>2. Частота обновления экрана может варьироваться в зависимости от приложения и достигать 120 Гц.</li>
+                        <li>
+                            3. По данным лаборатории HONOR. Фактические данные могут варьироваться в зависимости от привычек использования и факторов окружающей среды. Изображения продукта предоставлены только для справки. Фактические характеристики продукта ( в т.ч. внешний вид и цвет) могут отличаться. Стандарт сети 5G может поддерживаться местными операторами и быть доступным не во всех регионах.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="screen">
+        <div class="container">
+            <ul class="screen__list">
+                <li>1.Экран поддерживает 1,07 млрд отображаемых пикселей (8+2 бита).</li>
+                <li>2.По данным лаборатории HONOR. Характеристики защиты от падений двойного закаленного стекла значительно улучшены по сравнению с характеристиками обычного стекла. Телефон представляет собой прецизионное электронное устройство, при падении которого существует риск повреждения. Пожалуйста, избегайте падений и ударов.</li>
+                <li>3.На разных интерфейсах приложений и игровых экранах частота обновления экрана может отличаться в зависимости от фактической ситуации.</li>
+                <li>4.Экран поддерживает максимальную частоту обновления до 120 Гц. На разных интерфейсах приложений и игровых экранах частота обновления экрана может отличаться в зависимости от фактической ситуации.</li>
+                <li>5.Телефон не используется в медицинских целях.</li>
+                <li>6.По данным лаборатории HONOR. Фактическое использование может незначительно отличаться из-за индивидуальных различий в продуктах, привычках использования и факторах окружающей среды. Обращайтесь к фактической ситуации использования.</li>
+                <li>7.Типичная емкость аккумулятора составляет 5100 мА*ч, номинальная — 5000 мА*ч.</li>
+                <li>8.Устройство поддерживает максимальную проводную зарядку мощностью 40 Вт. Требуется фирменное зарядное устройство HONOR мощностью 40 Вт и кабель. Фактическая скорость зарядки может варьироваться в зависимости от условий окружающей среды и других факторов.</li>
+                <li>9.По данным лаборатории HONOR. Толщина (7,9 мм) измеряется в самом тонком месте устройства и не включает выступ камеры. Фактические размеры могут варьироваться в зависимости от конфигурации, производственного процесса и метода измерения.</li>
+                <li>10.Фактический вес может варьироваться в зависимости от конфигурации изделия, производственных процессов и методов измерения.</li>
+                <li>11.Доступна версия на 6 Гб. Технология расширения памяти увеличивает объем памяти устройства HONOR 6 Гб на 5 Гб. Объем доступной оперативной памяти меньше из-за использования системных файлов.</li>
+                <li>12.При тестировании технологии Anti-aging Engine расчетный период составил 36 месяцев для имитации самого длительногого сценария использования устройства с учетом фрагментации файловой системы /загруженности файловой базы данных и загрузки приложений. Фактический опыт может отличаться из-за различных сетевых сред, сценариев и привычек пользователей и других факторов.</li>
+                <li>13.В сравнении с предыдущим поколением. По данным лаборатории HONOR.</li>
+                <li>14.Количество пикселей фотографии отличается в разных режимах съемки. Обрайщайтесь к фактической ситуации.</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
